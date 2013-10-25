@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: Jason
+  email: mcghee.j@berkeley.edu
+
+two:
+  name: Elizabeth
+  email: elizabeth@berkeley.edu

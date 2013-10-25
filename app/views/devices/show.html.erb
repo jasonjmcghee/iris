@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @device.name %>
+</p>
+
+<p>
+  <strong>Wired mac:</strong>
+  <%= @device.wired_mac %>
+</p>
+
+<p>
+  <strong>Wireless mac:</strong>
+  <%= @device.wireless_mac %>
+</p>
+
+<p>
+  <strong>Network support:</strong>
+  <%= @device.network_support %>
+</p>
+
+<p>
+  <strong>Security alert:</strong>
+  <%= @device.security_alert %>
+</p>
+
+<%= link_to 'Edit', edit_device_path(@device) %> |
+<%= link_to 'Back', devices_path %>

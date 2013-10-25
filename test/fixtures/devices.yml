@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: 'jason.macbook.air'
+  wired_mac:
+  wireless_mac: '11:23:45:67:89:ab'
+  network_support: 'active'
+  security_alert:
+
+two:
+  name: 'elizabeth.macbook.pro'
+  wired_mac: '12:34:56:78:90:bc'
+  wireless_mac: '21:43:65:87:09:ab'
+  network_support: 'suspended'
+  security_alert: 'ACTION REQUIRED'

@@ -2,7 +2,10 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
   setup do
-    @user = users(:one)
+    @user_example = {
+      name: 'test',
+      email: 'test@gmail.com'
+    }
   end
 
   test "should be invalid if no name or no email" do
@@ -21,8 +24,8 @@ class UserTest < ActiveSupport::TestCase
   test "should have unique email" do
     user = User.new(@user_example)
     user.save
-    user = User.new(@user_example)
-    assert !user.valid?
-    assert user.errors[:email].include? "has already been taken"
+    user1 = User.new(@user_example)
+    assert !user1.valid?
+    assert user1.errors[:email].include? "has already been taken"
   end
 end

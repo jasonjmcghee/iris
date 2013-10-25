@@ -1,6 +1,19 @@
+<div class='form'>
+
 <h1>Editing user</h1>
 
-<%= render 'form' %>
+  <%= render 'form' %>
+</div>
+<br>
+
+Devices:
+<ul><% @devices.each do |device| %>
+  <li><%= device.name %></li>
+<% end %></ul>
+
+<br>
 
 <%= link_to 'Show', @user %> |
+<%= link_to 'Manage Devices', '/devices' %> |
+<%= link_to 'Manage Ownerships', '/ownerships' %> |
 <%= link_to 'Back', users_path %>

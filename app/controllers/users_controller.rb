@@ -10,6 +10,16 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @devices = []
+    Device.all.each do |d|
+      Ownership.all.each do |o|
+        if o.device_name == d.name
+          if @user.email == o.user_email
+            @devices.push(d)
+          end
+        end
+      end
+    end
   end
 
   # GET /users/new
@@ -19,6 +29,16 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    @devices = []
+    Device.all.each do |d|
+      Ownership.all.each do |o|
+        if o.device_name == d.name
+          if @user.email == o.user_email
+            @devices.push(d)
+          end
+        end
+      end
+    end
   end
 
   # POST /users

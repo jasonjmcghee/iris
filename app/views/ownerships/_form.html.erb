@@ -13,11 +13,11 @@
 
   <div class="field">
     <%= f.label :user_email %><br>
-    <%= f.text_field :user_email %>
+    <%= f.select :user_email, options_from_collection_for_select(User.all, :email, :email) %>
   </div>
   <div class="field">
     <%= f.label :device_name %><br>
-    <%= f.text_field :device_name %>
+    <%= f.select :device_name, options_from_collection_for_select(Device.all, :name, :name) %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -8,7 +8,19 @@
 <p>
   <strong>Email:</strong>
   <%= @user.email %>
-</p>
+  </p>
+
+<br>
+
+Devices:
+<ul><% @devices.each do |device| %>
+  <li><%= device.name %></li>
+<% end %></ul>
+
+<br>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Manage Devices', '/devices' %> |
+<%= link_to 'Manage Ownerships', '/ownerships' %> |
 <%= link_to 'Back', users_path %>

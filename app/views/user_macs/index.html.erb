@@ -1,0 +1,28 @@
+<h1>Listing user_macs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Mac Address</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user_macs.each do |user_mac| %>
+      <tr>
+        <td><%= User.find(user_mac.user_id).login %></td>
+        <td><%= MacAddress.find(user_mac.mac_address_id).address %></td>
+        <td></td>
+        <td><%= link_to 'Show', user_mac %></td>
+        <td><%= link_to 'Edit', edit_user_mac_path(user_mac) %></td>
+        <td><%= link_to 'Destroy', user_mac, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add Mac Address', new_user_mac_path %>

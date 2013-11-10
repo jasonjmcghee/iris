@@ -1,0 +1,40 @@
+<h1>Listing mac_addresses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Mac Address</th>
+      <th></th>
+      <th>Type</th>
+      <th></th>
+      <th>Owner</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mac_addresses.each do |mac_address| %>
+      <tr>
+        <td><%= mac_address.address %></td>
+        <td>
+        <td><%= mac_address.mac_type %></td>
+        <td>
+          <td>
+            <% if mac_address.user != nil %>
+              <%= User.find(mac_address.user.id).login %>
+            <% else %>
+                This MAC address is not associated with a user!
+            <% end %>
+        </td>
+        <td>
+        <td><%= link_to 'Show', mac_address %></td>
+        <td><%= link_to 'Edit', edit_mac_address_path(mac_address) %></td>
+        <td><%= link_to 'Destroy', mac_address, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mac address', new_mac_address_path %>

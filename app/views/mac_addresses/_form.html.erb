@@ -1,0 +1,25 @@
+<%= form_for(@mac_address) do |f| %>
+  <% if @mac_address.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mac_address.errors.count, "error") %> prohibited this mac_address from being saved:</h2>
+
+      <ul>
+      <% @mac_address.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label :mac_type %><br>
+    <%= f.select :mac_type, options_for_select([['wired', 'wired'], ['wireless', 'wireless']]) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

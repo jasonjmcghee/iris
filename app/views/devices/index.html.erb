@@ -4,11 +4,9 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Wired mac</th>
-      <th>Wireless mac</th>
       <th>Network support</th>
       <th>Security alert</th>
-      <th></th>
+      <th>Owner</th>
       <th></th>
       <th></th>
     </tr>
@@ -18,10 +16,9 @@
     <% @devices.each do |device| %>
       <tr>
         <td><%= device.name %></td>
-        <td><%= device.wired_mac %></td>
-        <td><%= device.wireless_mac %></td>
         <td><%= device.network_support %></td>
         <td><%= device.security_alert %></td>
+        <td><%= device.user.login %></td>
         <td><%= link_to 'Show', device %></td>
         <td><%= link_to 'Edit', edit_device_path(device) %></td>
         <td><%= link_to 'Destroy', device, method: :delete, data: { confirm: 'Are you sure?' } %></td>

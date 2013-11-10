@@ -6,21 +6,25 @@
 </p>
 
 <p>
-  <strong>Email:</strong>
-  <%= @user.email %>
+  <strong>Login:</strong>
+  <%= @user.login%>
   </p>
 
 <br>
 
 Devices:
-<ul><% @devices.each do |device| %>
-  <li><%= device.name %></li>
+<ul><% @user.devices.each do |device| %>
+  <li><a href="/devices/<%= device.id %>"><%= device.name %></a></li>
 <% end %></ul>
 
 <br>
 
+Mac Addresses:
+<ul><% @user.mac_addresses.each do |mac_address| %>
+  <li><a href="/mac_addresses/<%= mac_address.id %>"><%= mac_address.address %></a></li>
+<% end %></ul>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Manage Devices', '/devices' %> |
-<%= link_to 'Manage Ownerships', '/ownerships' %> |
 <%= link_to 'Back', users_path %>

@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  user_email: 'mcghee.j@berkeley.edu'
-  device_name: 'jason.macbook.air'
-
-two:
-  user_email: 'elizabeth@berkeley.edu'
-  device_name: 'elizabeth.macbook.pro'

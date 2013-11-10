@@ -10,16 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @devices = []
-    Device.all.each do |d|
-      Ownership.all.each do |o|
-        if o.device_name == d.name
-          if @user.email == o.user_email
-            @devices.push(d)
-          end
-        end
-      end
-    end
+    @devices = @user.devices.all
   end
 
   # GET /users/new
@@ -29,16 +20,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @devices = []
-    Device.all.each do |d|
-      Ownership.all.each do |o|
-        if o.device_name == d.name
-          if @user.email == o.user_email
-            @devices.push(d)
-          end
-        end
-      end
-    end
+    @devices = @user.devices.all
   end
 
   # POST /users
@@ -89,6 +71,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email)
+      params.require(:user).permit(:name, :login)
     end
 end

@@ -1,7 +1,11 @@
 Iris::Application.routes.draw do
-  get "pages/home"
-  resources :ownerships
+  resources :mac_addresses
 
+  resources :user_macs
+
+  resources :user_devices
+
+  get "pages/home"
   resources :devices
 
   resources :users
